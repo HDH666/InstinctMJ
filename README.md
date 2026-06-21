@@ -42,6 +42,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) and [CONTRIBUTOR_AGREEMENT.md](CONTRIBUTO
 From the `InstinctMJ` directory:
 
 ```bash
+# If uv is not installed:
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
 uv sync
 uv run instinct-list-envs
 ```

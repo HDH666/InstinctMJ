@@ -26,7 +26,7 @@ dependencies = [
   "pandas",
   "coacd",
   "warp-lang>=1.14.0",
-  "mujoco-warp>=3.9.0.1,~=3.9.0",
+  "mujoco-warp>=3.8.0.3,~=3.8.0",
   "mujoco~=3.8.0",
   "mjlab==1.4.0",
   "instinct_rl",
@@ -63,6 +63,11 @@ name = "pypi"
 url = "https://pypi.org/simple"
 
 [[tool.uv.index]]
+name = "nvidia"
+url = "https://pypi.nvidia.com/"
+explicit = true
+
+[[tool.uv.index]]
 name = "mujoco"
 url = "https://py.mujoco.org"
 explicit = true
@@ -70,8 +75,9 @@ explicit = true
 [tool.uv.sources]
 instinct_rl = { git = "https://github.com/project-instinct/instinct_rl.git" }
 mjlab = { path = "../mjlab", editable = true }
+warp-lang = { index = "nvidia", marker = "sys_platform != 'darwin'" }
 mujoco = { index = "mujoco" }
-mujoco-warp = { git = "https://github.com/google-deepmind/mujoco_warp", rev = "e65a72e49a978a3051e7942bc5591df355ba0b5c" }
+mujoco-warp = { git = "https://github.com/google-deepmind/mujoco_warp", rev = "88b55fc2696960b927bc12584994bb8412b36558" }
 
 [tool.setuptools]
 package-dir = {"" = "src"}
