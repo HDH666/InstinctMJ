@@ -12,6 +12,7 @@ requires-python = ">=3.10,<3.14"
 dependencies = [
   "tyro>=1.0.1",
   "prettytable>=3.0.0",
+  "setuptools>=69,<81",
   "PyYAML>=6.0",
   "numpy>=1.24",
   "gymnasium>=0.29",
@@ -73,7 +74,7 @@ url = "https://py.mujoco.org"
 explicit = true
 
 [tool.uv.sources]
-instinct_rl = { git = "https://github.com/project-instinct/instinct_rl.git" }
+instinct_rl = { path = "../instinct_rl", editable = true }
 mjlab = { path = "../mjlab", editable = true }
 warp-lang = { index = "nvidia", marker = "sys_platform != 'darwin'" }
 mujoco = { index = "mujoco" }
